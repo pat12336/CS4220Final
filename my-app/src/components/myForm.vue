@@ -6,21 +6,21 @@
             </h4>
             <p class="lead">Enter your latitude and longitude to display your location on a Google Map</p>
             <hr>
-            <form>
+            
                 <div class="form-row">
                     <div class="col">
-                        <input type="text" v-model="lat" id="lat" placeholder="Latitude" class="form-control">
+                        <input type="text" v-model="formLat" id="lat" placeholder="Latitude" class="form-control">
                     </div>
                     <div class="col">
-                        <input type="text" v-model="lon" id="lon" placeholder="Longitude" class="form-control">
+                        <input type="text" v-model="formLon" id="lon" placeholder="Longitude" class="form-control">
                     </div>
                 </div>
                 <div class="form-row">
                     <div class="col">
-                        <input type="submit" @click="findLocation(lat,lon)" value="Show My Location" class="btn btn-primary mt-4" >
+                        <input type="submit" @click="findLocation(formLat,formLon)" value="Show My Location" class="btn btn-primary mt-4" >
                     </div>
                 </div>
-            </form>
+           
         </div>
         <my-map :lattitude="lat" :longitude="lon"> </my-map>
     </div>
@@ -34,18 +34,17 @@ export default {
     name: 'myForm',
     data () {
         return{ 
-            lat: '',
-            lon: ''
+            lat: '51.477222',
+            lon: '0'
         }
     },
     components: {
         myMap
     },
     methods: {
-        findLocation (lat, lot) {
-            store.setLat(lat)
-            store.SetLon(lon)
-
+        findLocation (formLat, formLon) {
+            this.lat = formLat
+            this.lon = formLon
         }
     }
     
