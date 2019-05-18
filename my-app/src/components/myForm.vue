@@ -17,15 +17,17 @@
                 </div>
                 <div class="form-row">
                     <div class="col">
-                        <input type="submit" v-on:click="findLocation(lat,lon)" value="Show My Location" class="btn btn-primary mt-4" >
+                        <input type="submit" @click="findLocation(lat,lon)" value="Show My Location" class="btn btn-primary mt-4" >
                     </div>
                 </div>
             </form>
         </div>
+        <my-map :lattitude="lat" :longitude="lon"> </my-map>
     </div>
 </template>
 
 <script>
+import myMap from './my-map.vue'
 import { store } from '../store.js'
 
 export default {
@@ -35,6 +37,9 @@ export default {
             lat: '',
             lon: ''
         }
+    },
+    components: {
+        myMap
     },
     methods: {
         findLocation (lat, lot) {

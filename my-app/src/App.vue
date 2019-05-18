@@ -2,14 +2,13 @@
   <div id="app">
     
     <my-form/>
-    <my-map/>
-
+    
         <!-- lat="34.066445" lon="-118.166670" -->
   </div>
 </template>
 
 <script>
-import myMap from './components/my-map.vue'
+
 import myForm from './components/myForm.vue'
 
 export default {
@@ -18,7 +17,6 @@ export default {
     return {}
   },
   components: {
-    myMap,
     myForm
   }
 }
