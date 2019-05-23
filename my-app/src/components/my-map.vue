@@ -5,6 +5,7 @@
 </template>
 
 <script>
+import { config } from '../config.js'
 
 export default {
     name: 'my-map',
@@ -20,7 +21,7 @@ export default {
         updateURL(lat, lon){
             return 'https://maps.googleapis.com/maps/api/staticmap?center='+ lat +','+ lon  
             +'&zoom=14&size=400x400&markers=color:orange%7c'+ lat +','+ lon 
-            +'&key=AIzaSyAcWHUtcmdOXwJNDckVd8XyRDn9fnw7BHE'
+            +'&key=' + config.MY_KEY
         }
     },
     
